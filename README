@@ -1,3 +1,22 @@
+Prjpluto is a fork of buildroot designed to create complete embedded distributions for Cortex-M processors.
+THIS IS STILL CONSIDERED PRETTY ALPHA 
+The goal is to generate everything needed to develop and program and debug on embedded ARM Cortex-M series processors.
+It generates:
+The toolchain
+The RTOS (in this case a modified Nuttx)
+The software for icsp programming and debugging (openocd and gdb) 
+
+Eventually I hope to support other RTOSes for Cortex-M series processors. 
+
+Nuttx is a mostly posix compliant RTOS. It handles multiple processes and peripheral device drivers. It is very similar to linux. It also has a command line shell. 
+I have modified it a bit to act more like a true kernel. It also integrates in the buildroot generated filesystem into the Nuttx binary so that the files are available at run time. 
+
+Instructions are at http://www.vxmdesign.com/STM32.html
+
+Right now it has been tested against the STM32F407 discovery board with baseboard using the vdsc_defconfig
+
+(This is the original buildroot readme) 
+
 To build and use the buildroot stuff, do the following:
 
 1) run 'make menuconfig'
